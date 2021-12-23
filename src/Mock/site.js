@@ -9,10 +9,10 @@ export default [
                 code: 20000,
                 data: {
                     avatar: 'https://s2.ax1x.com/2020/01/17/1SCadg.png',
-                    slogan: 'The way up is not crowded, and most chose ease.',
+                    slogan: '张鑫俊你在哪里？？？',
                     name: 'FZY′blog',
-                    domain: 'https://www.fengziy.cn',
-                    notice: '摸别人的鱼，让别人无鱼可摸',
+                    domain: 'h',
+                    notice: '摸别人的鱼，让别人无鱼可摸--赵子凯and大熊s爸爸',
                     desc: '一个It技术的探索者'
                 }
             }

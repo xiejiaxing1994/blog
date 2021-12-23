@@ -1,6 +1,8 @@
 module.exports = {
-    publicPath: '/blog/',
-    assetsDir: '/blog/',
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/blog/'
+    : '/',
+    assetsDir: 'blog/',
     outputDir: 'docs',
     devServer: {
         port: 8888,
