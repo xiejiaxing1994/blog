@@ -1,5 +1,5 @@
 # gblog
-<p align="center">
+<!-- <p align="center">
   <img width="80" src="http://cdn.fengziy.cn/gblog/logo.svg"/>
 </p>
 <p align="center">
@@ -20,10 +20,8 @@
   <a href="https://github.com/fengziye/Gblog/releases">
       <img src="https://img.shields.io/github/release/fengziye/Gblog.svg" alt="GitHub release">
   </a>
-</p>
+</p> -->
 
-仓库：[码云](https://gitee.com/fengziy/Gblog) | [github](https://github.com/fengziye/Gblog)  
-[预览demo](http://static.fengziy.cn/Gblog/)
 ### 介绍
 >
 > 一款nice的基于 vue 的博客模板。
@@ -66,16 +64,13 @@ npm run build
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-#### 打赏作者
+<!-- #### 打赏作者
 
 <p align="center" id="donate">
   <img width="120" src="https://images.gitee.com/uploads/images/2020/0618/095618_60414df6_1658323.jpeg">
   <img width="120" src="https://images.gitee.com/uploads/images/2020/0618/095618_72307c44_1658323.png">
-</p>
+</p> -->
 
 
 #### User case（欢迎大家提供使用案例）
 
-- [罗夏的个人博客](http://roroschach.club/#/)
-- [黎先森的博客](https://www.lesslesson.com/)
-- [meng的博客](http://www.lqmblog.com/)
