@@ -65,10 +65,10 @@
                 padding: 2px;
                 border: 1px solid #DADADA;
                 position: relative;
-                transition: all 0.2s linear;
+                transition: all 0.5s linear;
                 overflow: hidden;
                 &:hover {
-                    transform: scale(1.1, 1.1);
+                    transform: scale(1.2, 1.2) rotateZ(360deg);
                     filter: contrast(130%);
                 }
             }

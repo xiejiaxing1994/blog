@@ -10,10 +10,10 @@ export default [
                 data: {
                     avatar: 'https://s2.ax1x.com/2020/01/17/1SCadg.png',
                     slogan: '张鑫俊你在哪里？？？',
-                    name: 'FZY′blog',
-                    domain: 'h',
+                    name: 'XJX′blog',
+                    domain: 'https://xiejiaxing1994.github.io/blog/',
                     notice: '摸别人的鱼，让别人无鱼可摸--赵子凯and大熊s爸爸',
-                    desc: '一个It技术的探索者'
+                    desc: '一条咸鱼',
                 }
             }
         }
@@ -31,29 +31,22 @@ export default [
                         title: 'QQ',
                         icon: 'iconqq',
                         color: '#1AB6FF ',
-                        href: 'http://wpa.qq.com/msgrd?v=3&uin=1224971566&site=qq&menu=yes'
+                        href: 'http://wpa.qq.com/msgrd?v=3&uin=1059633969&site=qq&menu=yes'
                     },
                     {
                         id: 2,
                         title: 'Gitee',
                         icon: 'icongitee',
                         color: '#d81e06',
-                        href: 'https://gitee.com/fengziy'
+                        href: 'https://gitee.com/xiejiaxing'
                     },
                     {
                         id: 3,
                         title: 'GitHub',
                         icon: 'icongithub',
                         color: '',
-                        href: 'https://github.com/fengziye'
+                        href: 'https://github.com/xiejiaxing1994'
                     },
-                    {
-                        id: 4,
-                        title: 'CSDN',
-                        icon: 'iconcsdn',
-                        color: 'red',
-                        href: 'https://blog.csdn.net/feng_zi_ye'
-                    }
                 ]
             }
         }
