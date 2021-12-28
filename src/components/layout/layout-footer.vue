@@ -13,7 +13,7 @@
                 <div>本站已苟活 {{runTimeInterval}}</div>
             </div>
         </div>
-        <div class="copyright">Copyright © 2021 by <a target="_blank" class="out-link" href="https://www.fengziy.cn">fengziy.cn</a> . All rights reserved. | <a target="_blank" class="out-link" href="/">京ICP备17015355号-1</a></div>
+        <div class="copyright">Copyright © 2021 by <a target="_blank" class="out-link" href="https://xiejiaxing1994.github.io/blog/">xiejiaxing</a> . All rights reserved. | <a target="_blank" class="out-link" href="/">京ICP备17015355号-1</a></div>
     </div>
 </template>
 

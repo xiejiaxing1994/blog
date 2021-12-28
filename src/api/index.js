@@ -55,3 +55,10 @@ export function fetchComment() {
         params: {}
     })
 }
+export function fetchMusicList() {
+    return request({
+        url: '/music/list',
+        method: 'get',
+        params: {}
+    })
+}

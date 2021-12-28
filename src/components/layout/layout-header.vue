@@ -9,6 +9,7 @@
         <div class="menus-btn" @click.stop="mobileShow=!mobileShow">
             Menus
         </div>
+        <a-player class="music-box" :autoplay="true" ref="music" :audio="audio" fixed :lrc-type="3"></a-player>
         <div class="site-menus" :class="{'mobileShow':mobileShow}" @click.stop="mobileShow=!mobileShow">
             <div class="menu-item header-search"><header-search/></div>
             <div class="menu-item"><router-link to="/">首页</router-link></div>
@@ -26,7 +27,7 @@
 
 <script>
     import HeaderSearch from '@/components/header-search'
-    import {fetchCategory} from '../../api'
+    import {fetchCategory,fetchMusicList} from '../../api'
     export default {
         name: "layout-header",
         components: {HeaderSearch},
@@ -36,12 +37,14 @@
                 fixed: false,
                 hidden: false,
                 category: [],
-                mobileShow: false
+                mobileShow: false,
+                audio: []
             }
         },
         mounted(){
             window.addEventListener('scroll', this.watchScroll)
             this.fetchCategory()
+            this.fetchMusic()
         },
         beforeDestroy () {
             window.removeEventListener("scroll", this.watchScroll)
@@ -66,12 +69,20 @@
                 }).catch(err => {
                     console.log(err)
                 })
+            },
+            fetchMusic(){
+                fetchMusicList().then(res => {
+                    this.audio = res.data
+                })
             }
         }
     }
 </script>
 
 <style scoped lang="less">
+    /deep/ .aplayer-lrc{
+        width: 500px;
+    }
     #layout-header {
         position: fixed;
         top: 0;
