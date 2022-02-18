@@ -1,75 +1,99 @@
-# gblog
-<!-- <p align="center">
-  <img width="80" src="http://cdn.fengziy.cn/gblog/logo.svg"/>
+# vue-admin-template
+
+English | [简体中文](./README-zh.md)
+
+> A minimal vue admin template with Element UI & axios & iconfont & permission control & lint
+
+**Live demo:** http://panjiachen.github.io/vue-admin-template
+
+
+**The current version is `v4.0+` build on `vue-cli`. If you want to use the old version , you can switch branch to [tag/3.11.0](https://github.com/PanJiaChen/vue-admin-template/tree/tag/3.11.0), it does not rely on `vue-cli`**
+
+<p align="center">
+  <b>SPONSORED BY</b>
 </p>
 <p align="center">
-  <a href="https://gitee.com/fengziy/Gblog">
-    <img src="https://gitee.com/fengziy/Gblog/badge/star.svg?theme=white" alt="star"/>
-    <img src="https://gitee.com/fengziy/Gblog/badge/fork.svg" alt="fork"/>
-  </a>
-  <a href="https://github.com/fengziye/Gblog">
-      <img src="https://img.shields.io/github/stars/fengziye/Gblog.svg?style=social" alt="Github star"/>
-      <img src="https://img.shields.io/github/forks/fengziye/Gblog.svg?style=social" alt="Github forks"/>
-  </a>
-  <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.6.11-brightgreen.svg" alt="vue"/>
-  </a>
-  <a href="https://github.com/fengziye/Gblog/blob/master/license">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/>
-  </a>
-  <a href="https://github.com/fengziye/Gblog/releases">
-      <img src="https://img.shields.io/github/release/fengziye/Gblog.svg" alt="GitHub release">
-  </a>
-</p> -->
+   <a href="https://finclip.com?from=vue_element" title="FinClip" target="_blank">
+      <img height="200px" src="https://gitee.com/panjiachen/gitee-cdn/raw/master/vue%E8%B5%9E%E5%8A%A9.png" title="FinClip">
+   </a>
+</p>
 
-### 介绍
->
-> 一款nice的基于 vue 的博客模板。
-> 在一些布局样式上借鉴了[Akina For Typecho](https://zhebk.cn/Web/Akina.html)的风格，也做了一些自己的改动。  
-> 打算用做搭建自己的博客使用，也开源给大家希望能喜欢，欢迎star。
->
-#### 完成功能
-后面有时间在增加新功能以及优化
-- [x] 搜索
-- [x] 评论
-- [x] 分类/分类文章
-- [x] 主页
-- [x] 文章列表
-- [x] 文章详情
-- [x] 友链
-- [x] 关于页/留言/申请友链
-- [x] 站点运行时间
-- [x] 回到顶部
-- [x] 文章分页
-- [x] 路由动画
-- [x] 点击心形特效
+## Build Setup
 
-### 安装依赖
-```
+```bash
+# clone the project
+git clone https://github.com/PanJiaChen/vue-admin-template.git
+
+# enter the project directory
+cd vue-admin-template
+
+# install dependency
 npm install
+
+# develop
+npm run dev
 ```
 
-### 启动服务
+This will automatically open http://localhost:9528
+
+## Build
+
+```bash
+# build for test environment
+npm run build:stage
+
+# build for production environment
+npm run build:prod
 ```
-npm run serve
+
+## Advanced
+
+```bash
+# preview the release environment effect
+npm run preview
+
+# preview the release environment effect + static resource analysis
+npm run preview -- --report
+
+# code format check
+npm run lint
+
+# code format check and auto fix
+npm run lint -- --fix
 ```
 
-### 编译打包
-```
-npm run build
-```
+Refer to [Documentation](https://panjiachen.github.io/vue-element-admin-site/guide/essentials/deploy.html) for more information
 
-### 更多自定义配置
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Demo
 
+![demo](https://github.com/PanJiaChen/PanJiaChen.github.io/blob/master/images/demo.gif)
 
-<!-- #### 打赏作者
+## Extra
 
-<p align="center" id="donate">
-  <img width="120" src="https://images.gitee.com/uploads/images/2020/0618/095618_60414df6_1658323.jpeg">
-  <img width="120" src="https://images.gitee.com/uploads/images/2020/0618/095618_72307c44_1658323.png">
-</p> -->
+If you want router permission && generate menu by user roles , you can use this branch [permission-control](https://github.com/PanJiaChen/vue-admin-template/tree/permission-control)
 
+For `typescript` version, you can use [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (Credits: [@Armour](https://github.com/Armour))
 
-#### User case（欢迎大家提供使用案例）
+## Related Project
 
+- [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
+
+- [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
+
+- [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template)
+
+- [awesome-project](https://github.com/PanJiaChen/vue-element-admin/issues/2312)
+
+## Browsers support
+
+Modern browsers and Internet Explorer 10+.
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
+| --------- | --------- | --------- | --------- |
+| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
+
+## License
+
+[MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
+
+Copyright (c) 2017-present PanJiaChen

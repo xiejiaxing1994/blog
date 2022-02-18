@@ -1,70 +1,228 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import store from '@/store'
+import Router from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-const routes = [
-    {
-        path: '/',
-        name: 'home',
-        component: () => import('../views/Home.vue'),
-        meta: { title: '首页'}
-    },
-    {
-        path: '/category/:cate',
-        name: 'category',
-        component: () => import('../views/Home.vue'),
-        meta: { title: '分类', params: 'cate'}
-    },
-    {
-        path: '/search/:words',
-        name: 'search',
-        component: () => import('../views/Home.vue'),
-        meta: { title: '搜索', params: 'words'}
-    },
-    {
-        path: '/about',
-        name: 'about',
-        component: () => import('../views/About.vue'),
-        meta: { title: '关于'}
-    },
-    {
-        path: '/friend',
-        name: 'friend',
-        component: () => import('../views/Friend.vue'),
-        meta: { title: '友链'}
-    },
-    {
-        path: '/article/:id',
-        name: 'article',
-        component: () => import('../views/Articles.vue'),
-        meta: { title: '文章'}
-    }
+/* Layout */
+import Layout from '@/layout'
+
+/**
+ * Note: sub-menu only appear when route children.length >= 1
+ * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
+ *
+ * hidden: true                   if set true, item will not show in the sidebar(default is false)
+ * alwaysShow: true               if set true, will always show the root menu
+ *                                if not set alwaysShow, when item has more than one children route,
+ *                                it will becomes nested mode, otherwise not show the root menu
+ * redirect: noRedirect           if set noRedirect will no redirect in the breadcrumb
+ * name:'router-name'             the name is used by <keep-alive> (must set!!!)
+ * meta : {
+    roles: ['admin','editor']    control the page roles (you can set multiple roles)
+    title: 'title'               the name show in sidebar and breadcrumb (recommend set)
+    icon: 'svg-name'/'el-icon-x' the icon show in the sidebar
+    breadcrumb: false            if set false, the item will hidden in breadcrumb(default is true)
+    activeMenu: '/example/list'  if set path, the sidebar will highlight the path you set
+  }
+ */
+
+/**
+ * constantRoutes
+ * a base page that does not have permission requirements
+ * all roles can be accessed
+ */
+export const constantRoutes = [
+  {
+    path: '/login',
+    component: () => import('@/views/login/index'),
+    hidden: true
+  },
+
+  {
+    path: '/404',
+    component: () => import('@/views/404'),
+    hidden: true
+  },
+
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/home',
+    children: [{
+      path: 'home',
+      name: 'home',
+      component: () => import('@/views/home/index'),
+      meta: { title: '首页', icon: 'el-icon-s-home' }
+    }]
+  },
+
+  {
+    path: '/html',
+    component: Layout,
+    redirect: '/html',
+    children: [{
+      path: 'index',
+      name: 'html',
+      component: () => import('@/views/html/index'),
+      meta: { title: 'HTML', icon: 'my-html5' }
+    }]
+  },
+
+  {
+    path: '/css',
+    component: Layout,
+    redirect: '/css',
+    children: [{
+      path: 'index',
+      name: 'css',
+      component: () => import('@/views/css/index'),
+      meta: { title: 'CSS', icon: 'my-css1' }
+    }]
+  },
+
+  {
+    path: '/javascript',
+    component: Layout,
+    redirect: '/javascript',
+    children: [{
+      path: 'index',
+      name: 'javascript',
+      component: () => import('@/views/javascript/index'),
+      meta: { title: 'JAVASCRIPT', icon: 'my-js1' }
+    }]
+  },
+  {
+    path: '/vue',
+    component: Layout,
+    redirect: '/vue',
+    children: [{
+      path: 'index',
+      name: 'vue',
+      component: () => import('@/views/vue/index'),
+      meta: { title: 'VUE', icon: 'my-Vue' }
+    }]
+  },
+  {
+    path: '/react',
+    component: Layout,
+    redirect: '/react',
+    children: [{
+      path: 'index',
+      name: 'react',
+      component: () => import('@/views/react/index'),
+      meta: { title: 'REACT', icon: 'my-React' }
+    }]
+  },
+
+  // {
+  //   path: '/example',
+  //   component: Layout,
+  //   redirect: '/example/table',
+  //   name: 'Example',
+  //   meta: { title: 'Example', icon: 'el-icon-s-help' },
+  //   children: [
+  //     {
+  //       path: 'table',
+  //       name: 'Table',
+  //       component: () => import('@/views/table/index'),
+  //       meta: { title: 'Table', icon: 'table' }
+  //     },
+  //     {
+  //       path: 'tree',
+  //       name: 'Tree',
+  //       component: () => import('@/views/tree/index'),
+  //       meta: { title: 'Tree', icon: 'tree' }
+  //     }
+  //   ]
+  // },
+
+  // {
+  //   path: '/form',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       name: 'Form',
+  //       component: () => import('@/views/form/index'),
+  //       meta: { title: 'Form', icon: 'form' }
+  //     }
+  //   ]
+  // },
+
+  // {
+  //   path: '/nested',
+  //   component: Layout,
+  //   redirect: '/nested/menu1',
+  //   name: 'Nested',
+  //   meta: {
+  //     title: 'Nested',
+  //     icon: 'nested'
+  //   },
+  //   children: [
+  //     {
+  //       path: 'menu1',
+  //       component: () => import('@/views/nested/menu1/index'), // Parent router-view
+  //       name: 'Menu1',
+  //       meta: { title: 'Menu1' },
+  //       children: [
+  //         {
+  //           path: 'menu1-1',
+  //           component: () => import('@/views/nested/menu1/menu1-1'),
+  //           name: 'Menu1-1',
+  //           meta: { title: 'Menu1-1' }
+  //         },
+  //         {
+  //           path: 'menu1-2',
+  //           component: () => import('@/views/nested/menu1/menu1-2'),
+  //           name: 'Menu1-2',
+  //           meta: { title: 'Menu1-2' },
+  //           children: [
+  //             {
+  //               path: 'menu1-2-1',
+  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
+  //               name: 'Menu1-2-1',
+  //               meta: { title: 'Menu1-2-1' }
+  //             },
+  //             {
+  //               path: 'menu1-2-2',
+  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
+  //               name: 'Menu1-2-2',
+  //               meta: { title: 'Menu1-2-2' }
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           path: 'menu1-3',
+  //           component: () => import('@/views/nested/menu1/menu1-3'),
+  //           name: 'Menu1-3',
+  //           meta: { title: 'Menu1-3' }
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       path: 'menu2',
+  //       component: () => import('@/views/nested/menu2/index'),
+  //       name: 'Menu2',
+  //       meta: { title: 'menu2' }
+  //     }
+  //   ]
+  // },
+
+  // 404 page must be placed at the end !!!
+  { path: '*', redirect: '/404', hidden: true }
 ]
 
-const router = new VueRouter({
-    mode: 'history',
-    base: process.env.BASE_URL,
-    routes
+const createRouter = () => new Router({
+  // mode: 'history', // require service support
+  scrollBehavior: () => ({ y: 0 }),
+  routes: constantRoutes
 })
-router.beforeEach((to, from, next) => {
-    let title = 'Gblog'
-    if (to.meta.params){
-        title = `${to.meta.title}:${to.params[to.meta.params] || ''} - ${title}`
-    }else {
-        title = `${to.meta.title} - ${title}`
-    }
-    document.title = title
-    if (to.path !== from.path) {
-        store.dispatch('setLoading', true);
-    }
-    next();
-})
-router.afterEach((to, from) => {
-    // 最多延迟 关闭 loading
-    setTimeout(() => {
-        store.dispatch('setLoading', false);
-    }, ~~(Math.random() * 800))
-})
+
+const router = createRouter()
+
+// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
+}
+
 export default router
